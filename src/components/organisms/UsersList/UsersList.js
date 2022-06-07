@@ -1,17 +1,17 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { users } from "../../data/users";
-import UsersListItem from "../UsersListItem/UsersListItem";
+import { users } from "data/users";
+import UsersListItem from "components/molecules/UsersListItem/UsersListItem";
+import { Wrapper } from "./UsersList.style";
 
 const UsersList = () => {
   return (
-    <div>
+    <Wrapper>
       <ul>
         {users.map((userData) => (
           <UsersListItem userData={userData} />
         ))}
       </ul>
-    </div>
+    </Wrapper>
   );
 };
 
