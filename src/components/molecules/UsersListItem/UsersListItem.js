@@ -4,8 +4,8 @@ import Button from "components/atoms/Button/Button";
 import { StyledAverage, StyledInfo, Wrapper } from "./UsersListItem.styled";
 
 const UsersListItem = ({
-  index,
   userData: { name, average, attendance = "0%" },
+  deleteUser,
 }) => {
   const showIndex = (index) => alert(`This is student#${index + 1}`);
   return (
@@ -14,7 +14,7 @@ const UsersListItem = ({
       <StyledInfo>
         <p>
           {name}
-          <Button onClick={() => showIndex(index)} />
+          <Button onClick={() => deleteUser(name)} />
         </p>
         <p>attendance: {attendance}</p>
       </StyledInfo>
