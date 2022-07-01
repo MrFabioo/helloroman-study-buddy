@@ -10,7 +10,6 @@ import {
   Navigate,
 } from "react-router-dom";
 import MainTemplate from "components/templates/MainTemplate/MainTemplate";
-import AddUser from "views/AddUser";
 import Dashboard from "./Dashboard";
 
 function Root() {
@@ -22,7 +21,6 @@ function Root() {
           <Wrapper>
             <Routes>
               <Route path="/" element={<Navigate replace to="/group/A" />} />
-              <Route path="/add-user" element={<AddUser />} />
               <Route path="/group/:id" element={<Dashboard />} />
             </Routes>
           </Wrapper>
@@ -31,7 +29,5 @@ function Root() {
     </Router>
   );
 }
-
-Root.propTypes = {};
 
 export default Root;
