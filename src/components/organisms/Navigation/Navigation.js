@@ -1,5 +1,6 @@
 import React from "react";
 import { Wrapper, Logo, StyledLink } from "./Navigation.style";
+
 const Navigation = () => {
   return (
     <Wrapper>
@@ -10,7 +11,9 @@ const Navigation = () => {
           Buddy
         </h1>
       </Logo>
-      <StyledLink to="/">Home</StyledLink>
+      <StyledLink exact to="/group">
+        Dashboard
+      </StyledLink>
       <StyledLink to="/add-user">Add user</StyledLink>
     </Wrapper>
   );

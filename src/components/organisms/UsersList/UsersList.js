@@ -5,10 +5,10 @@ import { StyledList } from "./UsersList.styles";
 import { UserShape } from "types";
 import { Title } from "components/atoms/Title/Title";
 
-const UsersList = ({ users, deleteUser }) => {
+const UsersList = ({ users = [] }) => {
   return (
     <>
-      <Title>Student list</Title>
+      <Title>Students list</Title>
       <StyledList>
         {users.map((userData) => (
           <UsersListItem key={userData.name} userData={userData} />
