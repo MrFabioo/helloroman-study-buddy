@@ -20,7 +20,8 @@ function Root() {
         <MainTemplate>
           <Wrapper>
             <Routes>
-              <Route path="/" element={<Navigate replace to="/group/A" />} />
+              <Route path="/" element={<Navigate to="/group/A" />} />
+              <Route path="/group" element={<Navigate to="/group/A" />} />
               <Route path="/group/:id" element={<Dashboard />} />
             </Routes>
           </Wrapper>

@@ -5,7 +5,7 @@ import { StyledAverage, StyledInfo, Wrapper } from "./StudentsListItem.styled";
 import { UserShape } from "types";
 
 const StudentsListItem = ({
-  userData: { name, average, attendance = "0%" },
+  userData: { average, name, attendance = "0%" },
 }) => {
   return (
     <Wrapper>
