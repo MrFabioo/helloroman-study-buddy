@@ -53,6 +53,7 @@ export const SearchBar = () => {
         <SearchResults
           isVisible={isOpen && matchingStudents.length > 0}
           {...getMenuProps()}
+          aria-label="results"
         >
           {isOpen &&
             matchingStudents.map((item, index) => (
