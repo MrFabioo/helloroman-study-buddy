@@ -1,10 +1,16 @@
 {
-  "extends": ["react-app", "react-app/jest", "plugin:prettier/recommended"],
+  "extends": [
+    "react-app",
+    "react-app/jest",
+    "plugin:prettier/recommended",
+    "plugin:storybook/recommended"
+  ],
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": [
-      "error",
+      "warn",
       {
+        "singleQuote": true,
         "endOfLine": "auto"
       }
     ]
