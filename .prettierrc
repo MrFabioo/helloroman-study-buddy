@@ -2,8 +2,11 @@
   "prettier/prettier": [
     "warn",
     {
-      "singleQuote": true,
       "endOfLine": "auto"
+    },
+    "ignore",
+    {
+      "singleQuote": true
     }
   ]
 }
