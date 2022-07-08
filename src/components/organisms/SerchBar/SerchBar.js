@@ -22,9 +22,6 @@ export const SearchBar = () => {
 
   const {
     isOpen,
-    selectedItem,
-    getToggleButtonProps,
-    getLabelProps,
     getMenuProps,
     getInputProps,
     getComboboxProps,
