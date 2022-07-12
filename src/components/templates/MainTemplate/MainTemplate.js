@@ -1,7 +1,7 @@
 import React from "react";
 import Navigation from "components/organisms/Navigation/Navigation";
 import { Wrapper } from "./MainTemplate.styles";
-import { SearchBar } from "components/organisms/SerchBar/SerchBar";
+import { SearchBar } from "components/organisms/SerchBar/SearchBar";
 import NewsSection from "../NewsSection/NewsSection";
 
 const MainTemplate = ({ children }) => {

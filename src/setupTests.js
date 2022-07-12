@@ -1,10 +1,11 @@
-import { setupWorker } from "msw";
+import "@testing-library/jest-dom";
+import { setupServer } from "msw/node";
 import { handlers } from "mocks/handlers";
 import { db } from "mocks/db";
 
-export const worker = setupWorker(...handlers);
+const server = setupServer(...handlers);
 
-const seed = () => {
+beforeAll(() => {
   db.group.create({
     id: "A",
   });
@@ -21,13 +22,8 @@ const seed = () => {
     db.student.create();
     db.event.create();
   }
-};
 
-seed();
-
-window.mocks = {
-  seed,
-  getStudents: () => db.student.getAll(),
-  getEvents: () => db.event.getAll(),
-  getGroups: () => db.group.getAll(),
-};
+  server.listen();
+});
+afterEach(() => server.resetHandlers());
+afterAll(() => server.close());

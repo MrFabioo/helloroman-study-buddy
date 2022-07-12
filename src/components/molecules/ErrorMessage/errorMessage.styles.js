@@ -30,11 +30,9 @@ export const Wrapper = styled.div`
   border-radius: 15px;
   animation: ${slideAnimation} 1s ease-in-out 1 forwards,
     ${slideAnimation} 1s 6s ease-in-out 1 reverse forwards;
-
   ${Title} {
     color: ${({ theme }) => theme.colors.error};
   }
-
   &::before,
   &::after {
     content: "";
@@ -47,11 +45,9 @@ export const Wrapper = styled.div`
     height: 5px;
     border-radius: 50px;
   }
-
   &::before {
     opacity: 0.5;
   }
-
   &::after {
     transform: translateX(-50%) scaleX(1);
     transform-origin: left top;

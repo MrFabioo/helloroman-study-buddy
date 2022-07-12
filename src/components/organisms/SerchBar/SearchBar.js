@@ -8,7 +8,7 @@ import {
   SearchResultsItem,
   SearchWrapper,
   StatusInfo,
-} from "./SerchBar.styles";
+} from "./SearchBar.styles";
 import { useStudents } from "hooks/useStudents";
 
 export const SearchBar = () => {
