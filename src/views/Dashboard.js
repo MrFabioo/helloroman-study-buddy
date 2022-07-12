@@ -7,6 +7,8 @@ import { Title } from "components/atoms/Title/Title";
 import useModal from "components/organisms/Modal/useModal";
 import StudentsDetails from "components/molecules/StudentDetails/StudentDetails";
 import Modal from "components/organisms/Modal/Modal";
+import { DisplayEvents } from "hoc/withEventsData";
+import EventsProvider from "providers/EventsProvider";
 
 const Dashboard = () => {
   const [groups, setGroups] = useState([]);
@@ -49,6 +51,10 @@ const Dashboard = () => {
           <StudentsDetails student={currentStudent} />
         </Modal>
       </GroupWrapper>
+      <EventsProvider
+        group="A"
+        render={(props) => <DisplayEvents events={props} />}
+      />
     </Wrapper>
   );
 };
