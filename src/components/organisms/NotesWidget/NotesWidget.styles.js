@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
   border: 2px solid ${({ theme }) => theme.colors.darkGrey};
 `;
 
-export const WidgetHeader = styled.button`
+export const WidgetHandler = styled.button`
   width: 80px;
   height: 30px;
   background-color: ${({ theme }) => theme.colors.darkGrey};
