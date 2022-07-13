@@ -9,6 +9,7 @@ import { useForm } from "react-hook-form";
 import { useAuth } from "hooks/useAuth";
 import ErrorMessage from "components/molecules/ErrorMessage/ErrorMesage";
 import { useError } from "hooks/useError";
+import Notes from "./Notes";
 
 const AuthenticatedApp = () => (
   <MainTemplate>
@@ -17,6 +18,7 @@ const AuthenticatedApp = () => (
         <Route path="/" element={<Navigate to="/group/A" />} />
         <Route path="/group" element={<Navigate to="/group/A" />} />
         <Route path="/group/:id" element={<Dashboard />} />
+        <Route path="/notes" element={<Notes />} />
       </Routes>
     </Wrapper>
   </MainTemplate>
