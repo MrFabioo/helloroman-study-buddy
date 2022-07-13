@@ -1,67 +1,49 @@
-import { Button } from "components/atoms/Button/Button";
-import FormField from "components/molecules/FormField/FormField";
-import Note from "components/molecules/Note/Note";
 import React from "react";
-import styled from "styled-components";
+import { Button } from "components/atoms/Button/Button";
+import Note from "components/molecules/Note/Note";
 import { useSelector, useDispatch } from "react-redux";
 import { addNote } from "store";
-
-const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: 0.7fr 1.3fr;
-  grid-gap: 30px;
-  padding: 30px;
-`;
-const FromWrapper = styled.div`
-  padding: 40px;
-  background-color: ${({ theme }) => theme.colors.white};
-  border-radius: 25px;
-  width: 100%;
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  align-items: flex-start;
-`;
-
-const StyledFormField = styled(FormField)`
-  height: ${({ isTextarea }) => (isTextarea ? "300px" : "unset")};
-`;
-
-const NotesWrapper = styled.div`
-  padding: 20px 60px;
-  display: flex;
-  flex-direction: column;
-`;
+import {
+  Wrapper,
+  FormWrapper,
+  StyledFormField,
+  NotesWrapper,
+} from "./Notes.styles";
+import { useForm } from "react-hook-form";
 
 const Notes = () => {
   const notes = useSelector((state) => state.notes);
   const dispatch = useDispatch();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-  const handleAddNote = () => {
-    dispatch(
-      addNote({
-        title: `New Note ${Math.floor(Math.random() * 10)}`,
-        content: "Lorem ipsum dolor sit amet",
-      })
-    );
+  const handleAddNote = ({ title, content }) => {
+    dispatch(addNote({ title, content }));
   };
 
   return (
     <Wrapper>
-      <FromWrapper>
-        <StyledFormField label="Title" name="title" id="title" />
+      <FormWrapper onSubmit={handleSubmit(handleAddNote)}>
         <StyledFormField
+          {...register("title", { required: true })}
+          label="Title"
+          name="title"
+          id="title"
+        />
+        <StyledFormField
+          {...register("content", { required: true })}
           isTextarea
           label="Content"
           name="content"
           id="content"
         />
-        <Button onClick={handleAddNote}>Add</Button>
-      </FromWrapper>
+        {errors.title && <span>Title is required</span>}
+        {errors.content && <span>Content is required</span>}
+        <Button type="submit">Add</Button>
+      </FormWrapper>
       <NotesWrapper>
         {notes.length ? (
           notes.map(({ title, content, id }) => (
