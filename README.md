@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Project implemented together with the HelloRoman channel
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Link
+
+link to course playlist: https://www.youtube.com/playlist?list=PLKnxnWdLGM48cEI7lnt8QFPpR6b-88K4-
 
 ## Available Scripts
 
